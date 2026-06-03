@@ -1,0 +1,30 @@
+# `docker compose up` lance Pulse en autonomie (SQLite dans un volume).
+#
+# Pour PostgreSQL (recommandé en production) : dé-commentez le service `db`,
+# passez `provider = "postgresql"` dans prisma/schema.prisma, et pointez
+# DATABASE_URL sur postgres (voir le README).
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: 'file:/data/pulse.db'
+      AUTH_SECRET: 'change-me-please-use-openssl-rand-base64-32'
+      APP_URL: 'http://localhost:3000'
+      CRON_SECRET: 'change-me'
+    volumes:
+      - pulse-data:/data
+
+  # db:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: pulse
+  #     POSTGRES_PASSWORD: pulse
+  #     POSTGRES_DB: pulse
+  #   ports: ['5432:5432']
+  #   volumes: ['pg-data:/var/lib/postgresql/data']
+
+volumes:
+  pulse-data:
+  # pg-data:

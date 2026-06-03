@@ -74,6 +74,11 @@ export async function signOutAction() {
   await signOut({ redirectTo: '/login' })
 }
 
+/** Connexion en un clic au compte de démonstration (créé par le seed). */
+export async function demoLoginAction() {
+  await signIn('credentials', { email: 'jordan@pulse.dev', password: 'password123', redirectTo: '/app' })
+}
+
 export async function createMonitorAction(orgSlug: string, _prev: ActionState, formData: FormData): Promise<ActionState> {
   const { org, role } = await requireOrg(orgSlug)
   if (!can(role, 'monitor:create')) return { error: "Votre rôle ne permet pas de créer un moniteur." }

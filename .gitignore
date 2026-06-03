@@ -19,3 +19,8 @@ prisma/dev.db*
 *.log
 .DS_Store
 coverage/
+
+# playwright
+/test-results/
+/playwright-report/
+/.playwright/

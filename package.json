@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
+    "e2e": "playwright test",
     "worker": "tsx scripts/worker.ts",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
@@ -28,6 +29,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.9.0",
     "dotenv": "^16.4.5",

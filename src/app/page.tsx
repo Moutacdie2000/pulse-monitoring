@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 const FEATURES = [
   { t: 'Surveillance continue', d: 'Des checks planifiés mesurent disponibilité et latence de vos endpoints, 24/7.' },
   { t: 'Incidents & alertes', d: 'Détection automatique des pannes, ouverture d’incidents et notifications (e-mail, webhook, Slack).' },
-  { t: 'Pages de statut publiques', d: 'Publiez une page de statut élégante par organisation, rendue en ISR — rapide et rassurante.' },
+  { t: 'Pages de statut publiques', d: 'Publiez une page de statut élégante par organisation, rendue en ISR, rapide et rassurante.' },
   { t: 'Multi-tenant & rôles', d: 'Organisations, équipes et RBAC (owner / admin / member). Facturation par abonnement.' },
 ]
 

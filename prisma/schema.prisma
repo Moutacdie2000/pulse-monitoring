@@ -1,4 +1,4 @@
-// Schéma Prisma de « pulse » — SaaS de monitoring d'uptime.
+// Schéma Prisma de « pulse », SaaS de monitoring d'uptime.
 // Provider sqlite pour le développement local ; le client est généré au postinstall.
 
 datasource db {

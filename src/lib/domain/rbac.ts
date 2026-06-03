@@ -15,7 +15,7 @@ export type Action =
  *
  * - owner  : toutes les actions (y compris facturation et gestion des membres).
  * - admin  : tout au niveau opérationnel (moniteurs, membres, facturation),
- *            seule la propriété de l'organisation lui échappe — mais le transfert
+ *            seule la propriété de l'organisation lui échappe, mais le transfert
  *            de propriété n'est pas une action exposée ici, donc en pratique
  *            l'admin a accès à l'ensemble des `Action` listées.
  * - member : lecture + création/édition de moniteurs ; pas de suppression, ni

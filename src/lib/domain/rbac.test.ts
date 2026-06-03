@@ -10,7 +10,7 @@ const ALL_ACTIONS: Action[] = [
   "org:billing",
 ];
 
-describe("can — owner", () => {
+describe("can, owner", () => {
   it("autorise toutes les actions", () => {
     for (const action of ALL_ACTIONS) {
       expect(can("owner", action)).toBe(true);
@@ -18,7 +18,7 @@ describe("can — owner", () => {
   });
 });
 
-describe("can — admin", () => {
+describe("can, admin", () => {
   it("autorise la gestion opérationnelle (moniteurs, membres, facturation)", () => {
     expect(can("admin", "monitor:create")).toBe(true);
     expect(can("admin", "monitor:edit")).toBe(true);
@@ -29,7 +29,7 @@ describe("can — admin", () => {
   });
 });
 
-describe("can — member", () => {
+describe("can, member", () => {
   it("autorise la création et l'édition de moniteurs", () => {
     expect(can("member", "monitor:create")).toBe(true);
     expect(can("member", "monitor:edit")).toBe(true);

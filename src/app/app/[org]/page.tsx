@@ -55,7 +55,7 @@ export default async function OrgDashboard({ params }: { params: { org: string }
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div className="mono" style={{ fontWeight: 700 }}>{m.uptime.toFixed(2)}%</div>
-                  <div className="faint" style={{ fontSize: '0.75rem' }}>{m.lastLatency != null ? `${m.lastLatency} ms` : '—'}</div>
+                  <div className="faint" style={{ fontSize: '0.75rem' }}>{m.lastLatency != null ? `${m.lastLatency} ms` : ', '}</div>
                 </div>
               </Link>
             ))}

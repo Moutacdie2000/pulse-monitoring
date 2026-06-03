@@ -11,7 +11,7 @@
 
 Pulse surveille des endpoints HTTP, calcule leur disponibilité et leur latence, ouvre automatiquement des **incidents** en cas de panne, et publie une **page de statut publique** par organisation. C'est un vrai SaaS : **organisations, équipes, RBAC, abonnements Stripe**.
 
-> ⚠️ Ce n'est **pas** une vitrine de design : l'accent est mis sur le back-end (BDD, auth, jobs, facturation, tests). L'UI reste néanmoins soignée — registre « console d'exploitation ».
+> ⚠️ Ce n'est **pas** une vitrine de design : l'accent est mis sur le back-end (BDD, auth, jobs, facturation, tests). L'UI reste néanmoins soignée, registre « console d'exploitation ».
 
 ## 🖼️ Aperçu
 
@@ -19,7 +19,7 @@ Pulse surveille des endpoints HTTP, calcule leur disponibilité et leur latence,
 |---|---|
 | ![Dashboard](docs/dashboard.png) | ![Détail moniteur](docs/monitor-detail.png) |
 
-| Page de statut publique (ISR) | Connexion — démo en 1 clic |
+| Page de statut publique (ISR) | Connexion, démo en 1 clic |
 |---|---|
 | ![Page de statut](docs/status-page.png) | ![Connexion démo](docs/login.png) |
 
@@ -44,7 +44,7 @@ Pulse surveille des endpoints HTTP, calcule leur disponibilité et leur latence,
 - **Moniteurs** HTTP : intervalle, statut attendu, timeout ; **disponibilité, latence** (sparklines), historique.
 - **Incidents** ouverts/résolus automatiquement selon les checks ; **alertes** (webhook/console ; e-mail/Slack documentés).
 - **Pages de statut publiques** par organisation, rendues en **ISR** (rapides, mises en cache).
-- **Abonnements Stripe** (plans free/pro) avec limites par plan — optionnel (mode démo sans clés).
+- **Abonnements Stripe** (plans free/pro) avec limites par plan, optionnel (mode démo sans clés).
 
 ## 🏗️ Architecture
 
@@ -60,7 +60,7 @@ flowchart LR
 ```
 
 - **Server Components + Server Actions** : pas d'API REST à maintenir côté UI ; les mutations passent par des actions typées avec contrôle RBAC.
-- **Logique métier pure & testée** (`src/lib/domain/`) : évaluation des réponses, calcul d'uptime, transitions d'incident, RBAC, limites de plan — découplée de Prisma/Next.
+- **Logique métier pure & testée** (`src/lib/domain/`) : évaluation des réponses, calcul d'uptime, transitions d'incident, RBAC, limites de plan, découplée de Prisma/Next.
 - **ISR** pour les pages publiques : régénérées toutes les 60 s, servies depuis le cache.
 
 ## 🗄️ Modèle de données
@@ -78,7 +78,7 @@ Le `Membership` porte le **rôle** (multi-tenant + RBAC). Chaque `Monitor` accum
 | Données | Prisma 5 · SQLite (dev) / PostgreSQL (prod) |
 | Auth | Auth.js v5 (Credentials, JWT) · bcrypt |
 | Validation | Zod |
-| Facturation | Stripe (abonnements + webhooks) — optionnel |
+| Facturation | Stripe (abonnements + webhooks), optionnel |
 | Tests | Vitest (logique métier) |
 | Outillage | Docker, GitHub Actions |
 
@@ -137,4 +137,4 @@ Couvre : évaluation des réponses, calcul d'uptime & buckets journaliers, trans
 
 ## 📄 Licence
 
-MIT — voir [LICENSE](LICENSE). © 2026 Noumabeu Moutacdie Jordan
+MIT, voir [LICENSE](LICENSE). © 2026 Noumabeu Moutacdie Jordan

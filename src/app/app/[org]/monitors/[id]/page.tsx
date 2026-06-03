@@ -87,8 +87,8 @@ export default async function MonitorDetail({ params }: { params: { org: string;
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 5, fontSize: '0.82rem' }}>
               {checks.slice(0, 12).map((c) => (
                 <li key={c.id} className="mono" style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
-                  <span style={{ color: c.ok ? 'var(--ok)' : 'var(--down)' }}>{c.ok ? '●' : '○'} {c.statusCode ?? c.error ?? '—'}</span>
-                  <span className="faint">{c.latencyMs ?? '—'} ms · {new Date(c.at).toLocaleTimeString('fr-FR')}</span>
+                  <span style={{ color: c.ok ? 'var(--ok)' : 'var(--down)' }}>{c.ok ? '●' : '○'} {c.statusCode ?? c.error ?? ', '}</span>
+                  <span className="faint">{c.latencyMs ?? ', '} ms · {new Date(c.at).toLocaleTimeString('fr-FR')}</span>
                 </li>
               ))}
             </ul>

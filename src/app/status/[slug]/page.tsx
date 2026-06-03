@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 const BANNER: Record<string, { text: string; bg: string; fg: string }> = {
   operational: { text: 'Tous les systèmes sont opérationnels', bg: 'var(--ok-soft)', fg: 'var(--brand-ink)' },
   degraded: { text: 'Performances dégradées sur certains services', bg: 'var(--degraded-soft)', fg: '#9a6500' },
-  down: { text: 'Incident en cours — services impactés', bg: 'var(--down-soft)', fg: '#b53036' },
+  down: { text: 'Incident en cours, services impactés', bg: 'var(--down-soft)', fg: '#b53036' },
   unknown: { text: 'Statut indéterminé', bg: 'var(--inset)', fg: 'var(--ink-2)' },
 }
 
@@ -62,7 +62,7 @@ export default async function StatusPage({ params }: { params: { slug: string } 
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
               {data.incidents.map((inc) => (
                 <li key={inc.id} style={{ borderLeft: `3px solid ${inc.resolvedAt ? 'var(--ok)' : 'var(--down)'}`, paddingLeft: 12 }}>
-                  <div style={{ fontWeight: 600, fontSize: '0.92rem' }}>{inc.monitor.name} — {inc.cause ?? 'indisponibilité'}</div>
+                  <div style={{ fontWeight: 600, fontSize: '0.92rem' }}>{inc.monitor.name}, {inc.cause ?? 'indisponibilité'}</div>
                   <div className="faint mono" style={{ fontSize: '0.76rem' }}>
                     {new Date(inc.startedAt).toLocaleString('fr-FR')} {inc.resolvedAt ? `→ résolu le ${new Date(inc.resolvedAt).toLocaleString('fr-FR')}` : '· en cours'}
                   </div>

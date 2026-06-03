@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 const MESSAGES: Record<string, { text: string; tone: string }> = {
   demo: { text: 'Stripe n’est pas configuré : facturation en mode démo.', tone: 'var(--degraded)' },
-  ok: { text: 'Abonnement activé — merci !', tone: 'var(--ok)' },
+  ok: { text: 'Abonnement activé, merci !', tone: 'var(--ok)' },
   forbidden: { text: 'Votre rôle ne permet pas de gérer la facturation.', tone: 'var(--down)' },
 }
 
@@ -38,7 +38,7 @@ export default async function SettingsPage({ params, searchParams }: { params: {
               <div className="kicker">Plan actuel</div>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, textTransform: 'capitalize' }}>{org.plan}</div>
             </div>
-            <span className="pill s-operational">{stripeEnabled ? 'Stripe activé' : 'Stripe — mode démo'}</span>
+            <span className="pill s-operational">{stripeEnabled ? 'Stripe activé' : 'Stripe, mode démo'}</span>
           </div>
 
           <div style={{ margin: '18px 0' }}>
@@ -56,7 +56,7 @@ export default async function SettingsPage({ params, searchParams }: { params: {
               <button className="btn btn-primary" type="submit">Passer au plan Pro</button>
             </form>
           )}
-          {org.plan === 'pro' && <p className="muted" style={{ fontSize: '0.9rem', margin: 0 }}>Vous êtes sur le plan Pro — merci !</p>}
+          {org.plan === 'pro' && <p className="muted" style={{ fontSize: '0.9rem', margin: 0 }}>Vous êtes sur le plan Pro, merci !</p>}
         </div>
 
         <div className="card" style={{ padding: 22, marginTop: 16 }}>

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('Pulse — parcours de démonstration', () => {
+test.describe('Pulse, parcours de démonstration', () => {
   test('connexion démo en 1 clic → dashboard', async ({ page }) => {
     await page.goto('/login')
     await page.getByRole('button', { name: /connexion démo/i }).click()

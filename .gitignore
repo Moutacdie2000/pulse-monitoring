@@ -1,0 +1,21 @@
+# dépendances
+node_modules/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# base de données locale (dev)
+*.db
+*.db-journal
+prisma/dev.db*
+
+# env & secrets
+.env
+.env*.local
+
+# divers
+*.log
+.DS_Store
+coverage/

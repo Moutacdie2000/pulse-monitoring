@@ -15,11 +15,13 @@ Pulse surveille des endpoints HTTP, calcule leur disponibilité et leur latence,
 
 ## 🖼️ Aperçu
 
-| Dashboard | Page de statut publique |
+| Dashboard | Détail d'un moniteur |
 |---|---|
-| ![Dashboard](docs/dashboard.png) | ![Status](docs/status-page.png) |
+| ![Dashboard](docs/dashboard.png) | ![Détail moniteur](docs/monitor-detail.png) |
 
-> _Lancez l'app (voir ci-dessous) puis enregistrez vos captures dans `docs/`._
+| Page de statut publique (ISR) | Connexion — démo en 1 clic |
+|---|---|
+| ![Page de statut](docs/status-page.png) | ![Connexion démo](docs/login.png) |
 
 ## 📋 Sommaire
 
